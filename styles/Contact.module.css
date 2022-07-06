@@ -1,0 +1,68 @@
+.input {
+    height: 40px;
+    border: none;
+    border: 1px solid black;
+    margin: 10px 0px;
+    font-size: 14px;
+    width: 80%;
+    border-radius: 5px;
+    padding: 10px;
+}
+  
+.textarea {
+    width: 80%;
+    margin: 10px 0px;
+    font-size: 14px;
+    border-radius: 5px;
+    padding: 10px;
+}
+  
+.button {
+    height: 40px;
+    border: none;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    font-weight: 300;
+    cursor: pointer;
+    width: 80%;
+    border-radius: 5px;
+    margin: 10px 0px;
+}
+  
+  
+.contactSection {
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    justify-content: space-around;
+    justify-items: center;
+}
+  
+.img {
+    flex: 2;
+    font-size: 44px;
+    font-weight: 300;
+    align-self: center;
+    text-align: center;
+    color: #bfdbf7;
+}
+  
+.form {
+    display: flex;
+    flex-direction: column;
+    flex: 3;
+    align-self: center;
+}
+
+.aboutSection {
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text {
+    font-size: large;
+}
