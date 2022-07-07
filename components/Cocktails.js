@@ -27,7 +27,9 @@ export default function List({ data }) {
       </div>
       <div className={styles.list}>
         {data.drinks
-          .filter(({ strDrink }) => strDrink.includes(search))
+          .filter(({ strDrink }) =>
+            strDrink.toLowerCase().includes(search.toLowerCase())
+          )
           .map((cocktail) => {
             return (
               <div key={cocktail.idDrink} className={styles.card}>
@@ -42,6 +44,17 @@ export default function List({ data }) {
                   <Link href={`/cocktails/${cocktail.idDrink}`}>
                     <a className={styles.title}>{cocktail.strDrink}</a>
                   </Link>
+                  {cocktail.strTags && (
+                    <div className={styles.taglist}>
+                      {cocktail.strTags.split(",").map((tag, idx) => {
+                        return (
+                          <div key={idx} className={styles.tag}>
+                            {tag}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  )}
                 </div>
               </div>
             );

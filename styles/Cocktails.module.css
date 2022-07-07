@@ -17,7 +17,7 @@
     border-radius: 5px;
     padding: 0 .5rem;
     border: none;
-    background-color: aliceblue;
+    background-color: #e5e5e5;
 }
 
 .list {
@@ -37,7 +37,7 @@
     margin: 2rem;
     padding: 2rem 0rem;
     border: 2px solid white;
-    background-color: aliceblue;
+    background-color: #e5e5e5;
     border-radius: 8px;
     box-shadow: 0px 2px 18px -4px rgba(233, 224, 224, 0.75);
     overflow: hidden;
@@ -62,6 +62,8 @@
     font-weight: 600;
     margin-bottom: 10px;
     word-wrap: break-word;
+    text-align: center;
+    color: black;
 }
 
 .imgContainer {
@@ -76,4 +78,27 @@
     height: 100%;
     object-fit: cover;
     position: relative;
+}
+
+.taglist {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.tag {
+    min-width: 30px;
+    height: 15px;
+    margin: 2px;
+    padding: 1px 2px;
+    border: 1px solid rgb(9, 4, 4);
+    background-color: #e5e5e5;
+    border-radius: 4px;
+    box-shadow: 0px 2px 18px -4px rgba(20, 33, 61, 0.75);
+    overflow: hidden;
+    transition: 0.3s;
+    text-align: center;
+    font-size: x-small;
+    color: black;
 }

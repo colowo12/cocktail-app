@@ -1,10 +1,23 @@
+import { useState } from "react";
 import Image from "next/image";
 import styles from "./cocktail.module.css";
 
+const languageMapping = {
+  "": "English",
+  IT: "Italian",
+  DE: "Deutsch",
+};
+
 export default function Cocktail({ drink }) {
+  let [language, setLanguage] = useState("");
+
   let tags = drink.strTags || "";
+  let languages = {};
   let ingredients = Object.entries(drink).reduce((acc, ingredient) => {
     let [key, val] = ingredient;
+    if (key.includes("strInstructions") && val !== null) {
+      languages[key.slice(15)] = val;
+    }
     if (key.includes("Ingredient") && val !== null) {
       let num = key[key.length - 1];
       let amount = drink[`strMeasure${num}`];
@@ -12,6 +25,11 @@ export default function Cocktail({ drink }) {
     }
     return acc;
   }, []);
+
+  function handleChange(event) {
+    event.preventDefault();
+    setLanguage(event.target.value);
+  }
 
   return (
     <div className={styles.container}>
@@ -40,8 +58,26 @@ export default function Cocktail({ drink }) {
           );
         })}
       </div>
+      <div className={styles.selectWrapper}>
+        <label for="cars">Choose a language:</label>
+        <select
+          name="language"
+          className={styles.select}
+          defaultValue=""
+          value={language}
+          onChange={handleChange}
+        >
+          {Object.keys(languages).map((lang) => {
+            return (
+              <option key={lang} value={lang}>
+                {languageMapping[lang]}
+              </option>
+            );
+          })}
+        </select>
+      </div>
       <div className={styles.description}>
-        <p>{drink.strInstructions}</p>
+        <p>{languages[language]}</p>
       </div>
     </div>
   );

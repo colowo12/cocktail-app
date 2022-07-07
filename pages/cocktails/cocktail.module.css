@@ -40,12 +40,13 @@
     margin: 4px;
     padding: 2px 4px;
     border: 1px solid rgb(9, 4, 4);
-    background-color: aliceblue;
+    background-color: #e5e5e5;
     border-radius: 4px;
     box-shadow: 0px 2px 18px -4px rgba(233, 224, 224, 0.75);
     overflow: hidden;
     transition: 0.3s;
     text-align: center;
+    color: black;
 }
 
 .ingredients {
@@ -55,4 +56,19 @@
 .span {
     width:100%;
     display: inline-block;
+}
+
+.select {
+    min-width: 50px;
+    height: 25px;
+    margin: 4px;
+    padding: 2px 4px;
+    border: 1px solid rgb(9, 4, 4);
+    background-color: #e5e5e5;
+    border-radius: 4px;
+    box-shadow: 0px 2px 18px -4px rgba(233, 224, 224, 0.75);
+    overflow: hidden;
+    transition: 0.3s;
+    text-align: center;
+    font-family: Andale Mono;
 }
